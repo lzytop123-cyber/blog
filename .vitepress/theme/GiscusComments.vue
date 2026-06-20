@@ -1,16 +1,7 @@
 <script setup>
-import DefaultTheme from 'vitepress/theme'
-import { useData } from 'vitepress'
-import { onMounted, watch, nextTick } from 'vue'
+import { onMounted } from 'vue'
 
-const { Layout } = DefaultTheme
-const { page, frontmatter } = useData()
-
-function loadGiscus() {
-  const container = document.getElementById('giscus-container')
-  if (!container) return
-  container.innerHTML = ''
-  
+onMounted(() => {
   const script = document.createElement('script')
   script.src = 'https://giscus.app/client.js'
   script.setAttribute('data-repo', 'lzytop123-cyber/blog')
@@ -18,7 +9,6 @@ function loadGiscus() {
   script.setAttribute('data-category', 'Announcements')
   script.setAttribute('data-category-id', 'DIC_kwDOTAGdW84C_iFO')
   script.setAttribute('data-mapping', 'pathname')
-  script.setAttribute('data-strict', '0')
   script.setAttribute('data-reactions-enabled', '1')
   script.setAttribute('data-emit-metadata', '0')
   script.setAttribute('data-input-position', 'bottom')
@@ -26,31 +16,17 @@ function loadGiscus() {
   script.setAttribute('data-lang', 'zh-CN')
   script.crossOrigin = 'anonymous'
   script.async = true
-  container.appendChild(script)
-}
-
-onMounted(() => {
-  if (!frontmatter.value.comments) return
-  nextTick(loadGiscus)
-})
-
-watch(() => page.value.path, () => {
-  if (!frontmatter.value.comments) return
-  nextTick(loadGiscus)
+  document.getElementById('giscus-container')?.appendChild(script)
 })
 </script>
 
 <template>
-  <Layout>
-    <template #doc-after>
-      <div v-if="frontmatter.comments" class="giscus-wrapper">
-        <div id="giscus-container"></div>
-      </div>
-    </template>
-  </Layout>
+  <div class="giscus-wrapper">
+    <div id="giscus-container"></div>
+  </div>
 </template>
 
-<style>
+<style scoped>
 .giscus-wrapper {
   margin-top: 64px;
   border-top: 1px solid var(--vp-c-divider);

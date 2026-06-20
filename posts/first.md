@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # VitePress 搭建笔记
 
 > 2025-06-19  |  标签：VitePress、博客
@@ -56,3 +52,5 @@ export default defineConfig({
 ## 下一步
 
 接入 Cloudflare Tunnel 外网访问，再加 GitHub Pages 自动部署。
+
+<GiscusComments />

@@ -20,6 +20,7 @@ export default defineConfig({
         {
           text: "文章列表",
           items: [
+            { text: "博客搭建全记录", link: "/posts/blog-build-guide" },
             { text: "第一篇文章", link: "/posts/first" }
           ]
         }
