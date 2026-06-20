@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # VitePress 搭建笔记
 
 > 2025-06-19  |  标签：VitePress、博客
