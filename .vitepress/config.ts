@@ -20,6 +20,8 @@ export default defineConfig({
         {
           text: "文章列表",
           items: [
+            { text: "自习室预约系统全记录", link: "/posts/zxd-reservation-system" },
+            { text: "仪表盘踩坑记", link: "/posts/homepage-dashboard-pitfalls" },
             { text: "Cloudflare IP 优选", link: "/posts/cloudflare-speed-test" },
             { text: "博客搭建全记录", link: "/posts/blog-build-guide" },
             { text: "第一篇文章", link: "/posts/first" }
